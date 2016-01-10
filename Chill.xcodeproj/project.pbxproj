@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C011AAE1C31A382001A23BE /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C011AAD1C31A382001A23BE /* TabController.swift */; };
+		2C18D2A81C2DF99800F654A0 /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C18D2A61C2DF99800F654A0 /* bokeh.png */; };
+		2C18D2AB1C2DFA1400F654A0 /* Shower.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2C18D2A91C2DFA1400F654A0 /* Shower.sks */; };
+		2C18D2AC1C2DFA1400F654A0 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C18D2AA1C2DFA1400F654A0 /* spark.png */; };
 		2C3980471BFFBCD800FA5918 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3980461BFFBCD800FA5918 /* AppDelegate.swift */; };
 		2C3980491BFFBCD800FA5918 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3980481BFFBCD800FA5918 /* ViewController.swift */; };
 		2C39804C1BFFBCD800FA5918 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C39804A1BFFBCD800FA5918 /* Main.storyboard */; };
@@ -14,6 +18,23 @@
 		2C3980511BFFBCD800FA5918 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C39804F1BFFBCD800FA5918 /* LaunchScreen.storyboard */; };
 		2C39805C1BFFBCD800FA5918 /* ChillTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C39805B1BFFBCD800FA5918 /* ChillTests.swift */; };
 		2C3980671BFFBCD800FA5918 /* ChillUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3980661BFFBCD800FA5918 /* ChillUITests.swift */; };
+		2C3980771BFFC09200FA5918 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3980761BFFC09200FA5918 /* AVFoundation.framework */; };
+		2C3980791BFFC09A00FA5918 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3980781BFFC09A00FA5918 /* Foundation.framework */; };
+		2C39807B1BFFC0A300FA5918 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C39807A1BFFC0A300FA5918 /* CoreGraphics.framework */; };
+		2C39807D1BFFC0AC00FA5918 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C39807C1BFFC0AC00FA5918 /* UIKit.framework */; };
+		2C4D6B1B1C34B16800E56A12 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D6B1A1C34B16800E56A12 /* Colors.swift */; };
+		2C5013641C1CD35F001D8094 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5013631C1CD35F001D8094 /* ActionButton.swift */; };
+		2C5DB0A81C42E78F007FA6A8 /* rain_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C5DB0A71C42E78F007FA6A8 /* rain_1.mp3 */; };
+		2C5DB0AA1C42E7E8007FA6A8 /* fire_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C5DB0A91C42E7E8007FA6A8 /* fire_1.mp3 */; };
+		2C75E47A1C3DF8280005B027 /* ic_pause_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C75E4791C3DF8280005B027 /* ic_pause_2x.png */; };
+		2C75E47C1C3DF83B0005B027 /* ic_play_arrow_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C75E47B1C3DF83B0005B027 /* ic_play_arrow_2x.png */; };
+		2CA5DA801C35AC2D0043D0E7 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA5DA7F1C35AC2D0043D0E7 /* MediaPlayer.framework */; };
+		2CA5DA841C35B6330043D0E7 /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2CA5DA831C35B6330043D0E7 /* Fire.sks */; };
+		2CAEFE2A1C2DE5FE009A0D8E /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAEFE291C2DE5FE009A0D8E /* AnimationView.swift */; };
+		2CC15AF81C35D08000955F20 /* ambient.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CC15AF71C35D08000955F20 /* ambient.wav */; };
+		2CC15AFB1C35D38200955F20 /* snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2CC15AF91C35D38200955F20 /* snow.sks */; };
+		2CEB6BD91C39C65400A21FF0 /* SceneInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEB6BD81C39C65400A21FF0 /* SceneInfo.swift */; };
+		2CFCCF381C011F1C00DE5D3A /* ArcSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFCCF371C011F1C00DE5D3A /* ArcSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +55,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C011AAD1C31A382001A23BE /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		2C18D2A61C2DF99800F654A0 /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bokeh.png; sourceTree = "<group>"; };
+		2C18D2A91C2DFA1400F654A0 /* Shower.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Shower.sks; sourceTree = "<group>"; };
+		2C18D2AA1C2DFA1400F654A0 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		2C3980431BFFBCD700FA5918 /* Chill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C3980461BFFBCD800FA5918 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C3980481BFFBCD800FA5918 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +72,23 @@
 		2C3980621BFFBCD800FA5918 /* ChillUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChillUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C3980661BFFBCD800FA5918 /* ChillUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChillUITests.swift; sourceTree = "<group>"; };
 		2C3980681BFFBCD800FA5918 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C3980761BFFC09200FA5918 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2C3980781BFFC09A00FA5918 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2C39807A1BFFC0A300FA5918 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2C39807C1BFFC0AC00FA5918 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2C4D6B1A1C34B16800E56A12 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		2C5013631C1CD35F001D8094 /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		2C5DB0A71C42E78F007FA6A8 /* rain_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain_1.mp3; sourceTree = "<group>"; };
+		2C5DB0A91C42E7E8007FA6A8 /* fire_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fire_1.mp3; sourceTree = "<group>"; };
+		2C75E4791C3DF8280005B027 /* ic_pause_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_pause_2x.png; sourceTree = "<group>"; };
+		2C75E47B1C3DF83B0005B027 /* ic_play_arrow_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_play_arrow_2x.png; sourceTree = "<group>"; };
+		2CA5DA7F1C35AC2D0043D0E7 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		2CA5DA831C35B6330043D0E7 /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fire.sks; sourceTree = "<group>"; };
+		2CAEFE291C2DE5FE009A0D8E /* AnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
+		2CC15AF71C35D08000955F20 /* ambient.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ambient.wav; sourceTree = "<group>"; };
+		2CC15AF91C35D38200955F20 /* snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = snow.sks; path = ../snow.sks; sourceTree = "<group>"; };
+		2CEB6BD81C39C65400A21FF0 /* SceneInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneInfo.swift; sourceTree = "<group>"; };
+		2CFCCF371C011F1C00DE5D3A /* ArcSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +96,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CA5DA801C35AC2D0043D0E7 /* MediaPlayer.framework in Frameworks */,
+				2C39807D1BFFC0AC00FA5918 /* UIKit.framework in Frameworks */,
+				2C39807B1BFFC0A300FA5918 /* CoreGraphics.framework in Frameworks */,
+				2C3980791BFFC09A00FA5918 /* Foundation.framework in Frameworks */,
+				2C3980771BFFC09200FA5918 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,9 +121,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C011AB91C31A67D001A23BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CAEFE291C2DE5FE009A0D8E /* AnimationView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		2C011ABA1C31A6A4001A23BE /* SpriteScenes */ = {
+			isa = PBXGroup;
+			children = (
+				2C18D2A61C2DF99800F654A0 /* bokeh.png */,
+				2CC15AF91C35D38200955F20 /* snow.sks */,
+				2C18D2AA1C2DFA1400F654A0 /* spark.png */,
+				2C18D2A91C2DFA1400F654A0 /* Shower.sks */,
+				2CA5DA831C35B6330043D0E7 /* Fire.sks */,
+			);
+			name = SpriteScenes;
+			sourceTree = "<group>";
+		};
+		2C1192FC1C2870C200B92E7F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C3980481BFFBCD800FA5918 /* ViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		2C39803A1BFFBCD700FA5918 = {
 			isa = PBXGroup;
 			children = (
+				2CA5DA7F1C35AC2D0043D0E7 /* MediaPlayer.framework */,
+				2C39807C1BFFC0AC00FA5918 /* UIKit.framework */,
+				2C39807A1BFFC0A300FA5918 /* CoreGraphics.framework */,
+				2C3980781BFFC09A00FA5918 /* Foundation.framework */,
+				2C3980761BFFC09200FA5918 /* AVFoundation.framework */,
 				2C3980451BFFBCD700FA5918 /* Chill */,
 				2C39805A1BFFBCD800FA5918 /* ChillTests */,
 				2C3980651BFFBCD800FA5918 /* ChillUITests */,
@@ -97,12 +177,20 @@
 		2C3980451BFFBCD700FA5918 /* Chill */ = {
 			isa = PBXGroup;
 			children = (
-				2C3980461BFFBCD800FA5918 /* AppDelegate.swift */,
-				2C3980481BFFBCD800FA5918 /* ViewController.swift */,
+				2C75E4681C3DF18E0005B027 /* Graphics */,
+				2C011ABA1C31A6A4001A23BE /* SpriteScenes */,
+				2C011AB91C31A67D001A23BE /* Views */,
+				2CF7C88B1C1D095500A1ADED /* Models */,
+				2C39807E1BFFC0BB00FA5918 /* Audio */,
+				2C5013621C1CD2F2001D8094 /* Controls */,
+				2C1192FC1C2870C200B92E7F /* ViewControllers */,
 				2C39804A1BFFBCD800FA5918 /* Main.storyboard */,
-				2C39804D1BFFBCD800FA5918 /* Assets.xcassets */,
+				2C4D6B1A1C34B16800E56A12 /* Colors.swift */,
 				2C39804F1BFFBCD800FA5918 /* LaunchScreen.storyboard */,
 				2C3980521BFFBCD800FA5918 /* Info.plist */,
+				2C39804D1BFFBCD800FA5918 /* Assets.xcassets */,
+				2C3980461BFFBCD800FA5918 /* AppDelegate.swift */,
+				2C011AAD1C31A382001A23BE /* TabController.swift */,
 			);
 			path = Chill;
 			sourceTree = "<group>";
@@ -123,6 +211,42 @@
 				2C3980681BFFBCD800FA5918 /* Info.plist */,
 			);
 			path = ChillUITests;
+			sourceTree = "<group>";
+		};
+		2C39807E1BFFC0BB00FA5918 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				2C5DB0A91C42E7E8007FA6A8 /* fire_1.mp3 */,
+				2C5DB0A71C42E78F007FA6A8 /* rain_1.mp3 */,
+				2CC15AF71C35D08000955F20 /* ambient.wav */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
+		2C5013621C1CD2F2001D8094 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				2CFCCF371C011F1C00DE5D3A /* ArcSlider.swift */,
+				2C5013631C1CD35F001D8094 /* ActionButton.swift */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
+		2C75E4681C3DF18E0005B027 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				2C75E47B1C3DF83B0005B027 /* ic_play_arrow_2x.png */,
+				2C75E4791C3DF8280005B027 /* ic_pause_2x.png */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		2CF7C88B1C1D095500A1ADED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2CEB6BD81C39C65400A21FF0 /* SceneInfo.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +317,12 @@
 				TargetAttributes = {
 					2C3980421BFFBCD700FA5918 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 8CAFRP4KNJ;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					2C3980561BFFBCD800FA5918 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -229,9 +359,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CA5DA841C35B6330043D0E7 /* Fire.sks in Resources */,
+				2C18D2AB1C2DFA1400F654A0 /* Shower.sks in Resources */,
 				2C3980511BFFBCD800FA5918 /* LaunchScreen.storyboard in Resources */,
+				2C18D2AC1C2DFA1400F654A0 /* spark.png in Resources */,
+				2CC15AFB1C35D38200955F20 /* snow.sks in Resources */,
+				2C5DB0AA1C42E7E8007FA6A8 /* fire_1.mp3 in Resources */,
 				2C39804E1BFFBCD800FA5918 /* Assets.xcassets in Resources */,
+				2C5DB0A81C42E78F007FA6A8 /* rain_1.mp3 in Resources */,
+				2C75E47C1C3DF83B0005B027 /* ic_play_arrow_2x.png in Resources */,
+				2CC15AF81C35D08000955F20 /* ambient.wav in Resources */,
+				2C75E47A1C3DF8280005B027 /* ic_pause_2x.png in Resources */,
 				2C39804C1BFFBCD800FA5918 /* Main.storyboard in Resources */,
+				2C18D2A81C2DF99800F654A0 /* bokeh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +396,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C011AAE1C31A382001A23BE /* TabController.swift in Sources */,
+				2C4D6B1B1C34B16800E56A12 /* Colors.swift in Sources */,
 				2C3980491BFFBCD800FA5918 /* ViewController.swift in Sources */,
 				2C3980471BFFBCD800FA5918 /* AppDelegate.swift in Sources */,
+				2CEB6BD91C39C65400A21FF0 /* SceneInfo.swift in Sources */,
+				2CFCCF381C011F1C00DE5D3A /* ArcSlider.swift in Sources */,
+				2C5013641C1CD35F001D8094 /* ActionButton.swift in Sources */,
+				2CAEFE2A1C2DE5FE009A0D8E /* AnimationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,10 +543,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Chill/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.budmanstrong.Chill;
+				PRODUCT_BUNDLE_IDENTIFIER = com.budmanstrong.chill;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -408,10 +557,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Chill/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.budmanstrong.Chill;
+				PRODUCT_BUNDLE_IDENTIFIER = com.budmanstrong.chill;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -482,6 +634,7 @@
 				2C39806D1BFFBCD800FA5918 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C39806E1BFFBCD800FA5918 /* Build configuration list for PBXNativeTarget "ChillTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +643,7 @@
 				2C3980701BFFBCD800FA5918 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C3980711BFFBCD800FA5918 /* Build configuration list for PBXNativeTarget "ChillUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +652,7 @@
 				2C3980731BFFBCD800FA5918 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
