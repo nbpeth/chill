@@ -5,7 +5,7 @@ import AVFoundation
 import MediaPlayer
 
 class ViewController: UIViewController {
-    var audioPlayer:AVAudioPlayer!
+    var audioPlayer:AudioPlayer!
     var aniView:AnimationView!
     var sceneInfo:[String:SceneInfo]!
     var currentScene:SceneInfo!
@@ -19,8 +19,8 @@ class ViewController: UIViewController {
         self.view.backgroundColor = Colors.navy
 
         stowSceneInfo()
+        setAudioPlayer("rain_1", type: "mp3")
         setScene("Shower")
-        initAudioPlayer("rain_1", type:"mp3")
     }
     
     func stowSceneInfo(){
@@ -38,31 +38,12 @@ class ViewController: UIViewController {
         aniView.emitter = SKEmitterNode(fileNamed: sceneName)
         aniView.emitter.position = CGPointMake(self.view.frame.width/2, self.view.frame.height/currentScene.emitterPosition);
         aniView.backgroundColor = UIColor.clearColor()
-        aniView.emitter.particleBirthRate = audioPlaying() ? currentScene.birthRate : 0
+        aniView.emitter.particleBirthRate = audioPlayer.audioPlaying() ? currentScene.birthRate : 0
         self.view.insertSubview(aniView, belowSubview: slider)
 
-        initAudioPlayer(currentScene.audioFile, type:currentScene.audioFileType)
+        setAudioPlayer(currentScene.audioFile, type: currentScene.audioFileType)
     }
-    
-    func initAudioPlayer(file:String, type:String){
-        let path = NSBundle.mainBundle().pathForResource(file, ofType: type)!
-        let url = NSURL(fileURLWithPath: path)
-        let audioShouldPlay = audioPlaying()
-        
-        do{
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            
-            audioPlayer = try AVAudioPlayer(contentsOfURL: url)
-            audioPlayer.volume = slider.value
-            audioPlayer.numberOfLoops = -1
-            audioPlayer.prepareToPlay()
-            
-            if(audioShouldPlay){
-                audioPlayer.play()
-            }
-        }
-        catch{}
-    }
+
     
     @IBAction func segmentControlHasChanged(sender: UISegmentedControl) {
         switch segmentControl.selectedSegmentIndex
@@ -114,13 +95,13 @@ class ViewController: UIViewController {
     }
     
     func adjustVolume(){
-        audioPlayer.volume = slider.value
+        audioPlayer.setVolume(slider.value)
     }
     
     func toggleAudio(){
         let mpic = MPNowPlayingInfoCenter.defaultCenter()
         
-        if(audioPlaying()){
+        if(audioPlayer.audioPlaying()){
             audioPlayer.stop()
             aniView?.emitter.particleBirthRate = 0
             playGraphic.image = UIImage(named: "ic_play_arrow_2x.png")
@@ -146,23 +127,11 @@ class ViewController: UIViewController {
         catch{}
     }
     
-    func audioPlaying()->Bool{
-        return audioPlayer?.playing == true
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func shouldAutorotate() -> Bool {
-        return false;
-    }
-    
     override func remoteControlReceivedWithEvent(event: UIEvent?) { // *
         switch event!.subtype {
             
         case .RemoteControlTogglePlayPause:
-            if audioPlayer.playing { audioPlayer.pause() } else { audioPlayer.play()}
+            if audioPlayer.audioPlaying() { audioPlayer.pause() } else { audioPlayer.play()}
         case .RemoteControlPlay:
             audioPlayer.play()
         case .RemoteControlPause:
@@ -170,6 +139,10 @@ class ViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    func setAudioPlayer(file:String, type:String){
+        audioPlayer = AudioPlayer(file: file, type: type, sliderValue: slider.value)
     }
     
     override func canBecomeFirstResponder() -> Bool {
@@ -181,6 +154,14 @@ class ViewController: UIViewController {
         self.becomeFirstResponder()
         
         UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return false;
     }
     
 }

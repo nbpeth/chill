@@ -33,6 +33,7 @@
 		2CAEFE2A1C2DE5FE009A0D8E /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAEFE291C2DE5FE009A0D8E /* AnimationView.swift */; };
 		2CC15AF81C35D08000955F20 /* ambient.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CC15AF71C35D08000955F20 /* ambient.wav */; };
 		2CC15AFB1C35D38200955F20 /* snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2CC15AF91C35D38200955F20 /* snow.sks */; };
+		2CE8514F1C44516100A6E321 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8514E1C44516100A6E321 /* AudioPlayer.swift */; };
 		2CEB6BD91C39C65400A21FF0 /* SceneInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEB6BD81C39C65400A21FF0 /* SceneInfo.swift */; };
 		2CFCCF381C011F1C00DE5D3A /* ArcSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFCCF371C011F1C00DE5D3A /* ArcSlider.swift */; };
 /* End PBXBuildFile section */
@@ -87,6 +88,7 @@
 		2CAEFE291C2DE5FE009A0D8E /* AnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
 		2CC15AF71C35D08000955F20 /* ambient.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ambient.wav; sourceTree = "<group>"; };
 		2CC15AF91C35D38200955F20 /* snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = snow.sks; path = ../snow.sks; sourceTree = "<group>"; };
+		2CE8514E1C44516100A6E321 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		2CEB6BD81C39C65400A21FF0 /* SceneInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneInfo.swift; sourceTree = "<group>"; };
 		2CFCCF371C011F1C00DE5D3A /* ArcSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +193,7 @@
 				2C39804D1BFFBCD800FA5918 /* Assets.xcassets */,
 				2C3980461BFFBCD800FA5918 /* AppDelegate.swift */,
 				2C011AAD1C31A382001A23BE /* TabController.swift */,
+				2CE8514E1C44516100A6E321 /* AudioPlayer.swift */,
 			);
 			path = Chill;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 			files = (
 				2C011AAE1C31A382001A23BE /* TabController.swift in Sources */,
 				2C4D6B1B1C34B16800E56A12 /* Colors.swift in Sources */,
+				2CE8514F1C44516100A6E321 /* AudioPlayer.swift in Sources */,
 				2C3980491BFFBCD800FA5918 /* ViewController.swift in Sources */,
 				2C3980471BFFBCD800FA5918 /* AppDelegate.swift in Sources */,
 				2CEB6BD91C39C65400A21FF0 /* SceneInfo.swift in Sources */,
