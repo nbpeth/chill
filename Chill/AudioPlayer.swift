@@ -6,11 +6,13 @@ class AudioPlayer: NSObject {
     var file:String
     var type:String
     var sliderValue:Float
+    var shouldPlay:Bool
     
-    init(file:String, type:String, sliderValue:Float){
+    init(file:String, type:String, sliderValue:Float, shouldPlay:Bool){
         self.file = file
         self.type = type
         self.sliderValue = sliderValue
+        self.shouldPlay = shouldPlay
         
         super.init()
         self.initAudioPlayer()
@@ -19,7 +21,7 @@ class AudioPlayer: NSObject {
     func initAudioPlayer(){
         let path = NSBundle.mainBundle().pathForResource(file, ofType: type)!
         let url = NSURL(fileURLWithPath: path)
-        let audioShouldPlay = audioPlaying()
+//        let audioShouldPlay = audioPlaying()
         
         do{
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
@@ -29,7 +31,7 @@ class AudioPlayer: NSObject {
             audioPlayer?.numberOfLoops = -1
             audioPlayer?.prepareToPlay()
             
-            if(audioShouldPlay){
+            if(shouldPlay){
                 audioPlayer?.play()
             }
         }
@@ -49,7 +51,7 @@ class AudioPlayer: NSObject {
     }
     
     func audioPlaying()->Bool{
-        return (audioPlayer != nil) ? audioPlayer!.playing : false
+        return audioPlayer?.playing == true ? true : false
     }
     
     func setVolume(volume:Float){

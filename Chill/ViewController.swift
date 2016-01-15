@@ -142,7 +142,8 @@ class ViewController: UIViewController {
     }
     
     func setAudioPlayer(file:String, type:String){
-        audioPlayer = AudioPlayer(file: file, type: type, sliderValue: slider.value)
+        let shouldPlay = audioPlayer?.audioPlaying() == true ? true : false
+        audioPlayer = AudioPlayer(file: file, type: type, sliderValue: slider.value, shouldPlay: shouldPlay)
     }
     
     override func canBecomeFirstResponder() -> Bool {
