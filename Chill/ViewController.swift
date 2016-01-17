@@ -112,8 +112,7 @@ class ViewController: UIViewController {
     
     func stopAudio(mpic:MPNowPlayingInfoCenter){
         audioPlayer.stop()
-        aniView?.emitter.particleBirthRate = 0
-        playGraphic.image = UIImage(named: "ic_play_arrow_2x.png")
+        resetUI()
         
         mpic.nowPlayingInfo = nil
         activeAudioSession(false)
@@ -138,13 +137,18 @@ class ViewController: UIViewController {
     
     func checkState(){
         if(AVAudioSession.sharedInstance().otherAudioPlaying){
-            
+            resetUI()
+            return
         }
         
         if(shouldPlayOnReentry == true){
             playAudioWithCurrentSettings(mpic)
-
         }
+    }
+    
+    func resetUI(){
+        aniView?.emitter.particleBirthRate = 0
+        playGraphic.image = UIImage(named: "ic_play_arrow_2x.png")
     }
     
     func saveState() {
