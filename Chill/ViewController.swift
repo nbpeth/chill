@@ -111,6 +111,7 @@ class ViewController: UIViewController {
     }
     
     func stopAudio(mpic:MPNowPlayingInfoCenter){
+        shouldPlayOnReentry = false
         audioPlayer.stop()
         resetUI()
         
@@ -119,6 +120,7 @@ class ViewController: UIViewController {
     }
     
     func playAudioWithCurrentSettings(mpic:MPNowPlayingInfoCenter){
+        shouldPlayOnReentry = true
         audioPlayer.play()
         aniView?.emitter.particleBirthRate = currentScene.birthRate
         playGraphic.image = UIImage(named: "ic_pause_2x.png")
@@ -138,6 +140,7 @@ class ViewController: UIViewController {
     func checkState(){
         if(AVAudioSession.sharedInstance().otherAudioPlaying || shouldPlayOnReentry == false){
             resetUI()
+            
             return
         }
         
@@ -148,10 +151,6 @@ class ViewController: UIViewController {
     func resetUI(){
         aniView?.emitter.particleBirthRate = 0
         playGraphic.image = UIImage(named: "ic_play_arrow_2x.png")
-    }
-    
-    func saveState() {
-        shouldPlayOnReentry = shouldPlay()
     }
     
     func shouldPlay() -> Bool{
@@ -169,8 +168,10 @@ class ViewController: UIViewController {
             if audioPlayer.audioPlaying() { audioPlayer.pause() } else { audioPlayer.play()}
         case .RemoteControlPlay:
             audioPlayer.play()
+            shouldPlayOnReentry = true
         case .RemoteControlPause:
             audioPlayer.pause()
+            shouldPlayOnReentry = false
         default:
             break
         }
