@@ -14,7 +14,6 @@ import UIKit
     override func drawRect(rect: CGRect)
     {
         let newSliderColor = transformColor(sliderColor)
-        
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
         let radius: CGFloat = max(bounds.width, bounds.height)
 
@@ -24,12 +23,11 @@ import UIKit
         
         let arcLength = findArcLength(arcStart, endPoint: sliderArc, radius: radius, thing: 1)
         let maxArcLength = findArcLength(arcStart, endPoint: baseArc, radius: radius, thing: 1)
-
+        
         let sliderValue = Float(round(100 * (arcLength / maxArcLength))/100)
         
         self.value = sliderValue < 0.03 ? 0 : sliderValue
         
-    
     }
     
     func transformColor(arc:UIColor) -> UIColor {

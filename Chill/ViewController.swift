@@ -136,14 +136,13 @@ class ViewController: UIViewController {
     }
     
     func checkState(){
-        if(AVAudioSession.sharedInstance().otherAudioPlaying){
+        if(AVAudioSession.sharedInstance().otherAudioPlaying || shouldPlayOnReentry == false){
             resetUI()
             return
         }
         
-        if(shouldPlayOnReentry == true){
-            playAudioWithCurrentSettings(mpic)
-        }
+        playAudioWithCurrentSettings(mpic)
+        
     }
     
     func resetUI(){
