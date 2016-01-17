@@ -9,6 +9,8 @@ class ViewController: UIViewController {
     var aniView:AnimationView!
     var sceneInfo:[String:SceneInfo]!
     var currentScene:SceneInfo!
+    var shouldPlayOnReentry:Bool = false
+    let mpic = MPNowPlayingInfoCenter.defaultCenter()
     
     @IBOutlet weak var slider: ArcSlider!
     @IBOutlet weak var segmentControl: UISegmentedControl!
@@ -17,7 +19,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         self.view.backgroundColor = Colors.navy
-
+        
         stowSceneInfo()
         setAudioPlayer("rain_1", type: "mp3")
         setScene("Shower")
@@ -25,9 +27,9 @@ class ViewController: UIViewController {
     
     func stowSceneInfo(){
         sceneInfo = [String:SceneInfo]()
-        sceneInfo.updateValue(SceneInfo(birthRate:1500, emitterPosition:2, audioFile: "rain_1", audioFileType: "mp3"), forKey: "Shower")
-        sceneInfo.updateValue(SceneInfo(birthRate:220, emitterPosition:2, audioFile: "fire_1", audioFileType: "mp3"), forKey: "Fire")
-        sceneInfo.updateValue(SceneInfo(birthRate:42, emitterPosition:1, audioFile: "ambient", audioFileType: "wav"), forKey: "snow")
+        sceneInfo.updateValue(SceneInfo(sceneName:"Shower", birthRate:1500, emitterPosition:2, audioFile: "rain_1", audioFileType: "mp3"), forKey: "Shower")
+        sceneInfo.updateValue(SceneInfo(sceneName:"Fire",birthRate:220, emitterPosition:2, audioFile: "fire_1", audioFileType: "mp3"), forKey: "Fire")
+        sceneInfo.updateValue(SceneInfo(sceneName:"snow",birthRate:42, emitterPosition:1, audioFile: "ambient", audioFileType: "wav"), forKey: "snow")
     }
     
     func setScene(sceneName:String){
@@ -60,15 +62,15 @@ class ViewController: UIViewController {
                 setScene("Fire")
                 updateSegmentTheme()
             
-        case 2:
-            changeTheme(UIColor.blackColor(), baseColor: Colors.lavender, sliderColor: Colors.violet, buttonColor:
-                Colors.deepPurpleSemiTrans, segmentColor: Colors.lightPurple)
-            setScene("snow")
-            updateSegmentTheme()
+            case 2:
+                changeTheme(UIColor.blackColor(), baseColor: Colors.lavender, sliderColor: Colors.violet, buttonColor:
+                    Colors.deepPurpleSemiTrans, segmentColor: Colors.lightPurple)
+                setScene("snow")
+                updateSegmentTheme()
             
             
-            default:
-                break;
+                default:
+                    break;
         }
     }
     
@@ -99,25 +101,32 @@ class ViewController: UIViewController {
     }
     
     func toggleAudio(){
-        let mpic = MPNowPlayingInfoCenter.defaultCenter()
-        
         if(audioPlayer.audioPlaying()){
-            audioPlayer.stop()
-            aniView?.emitter.particleBirthRate = 0
-            playGraphic.image = UIImage(named: "ic_play_arrow_2x.png")
-            
-            mpic.nowPlayingInfo = nil
-            activeAudioSession(false)
+            stopAudio(mpic)
         }
             
         else{
-            audioPlayer.play()
-            aniView?.emitter.particleBirthRate = currentScene.birthRate
-            playGraphic.image = UIImage(named: "ic_pause_2x.png")
-            
-            mpic.nowPlayingInfo = [MPMediaItemPropertyTitle:"Chill"]
-            activeAudioSession(true)
+            playAudioWithCurrentSettings(mpic)
         }
+    }
+    
+    func stopAudio(mpic:MPNowPlayingInfoCenter){
+        audioPlayer.stop()
+        aniView?.emitter.particleBirthRate = 0
+        playGraphic.image = UIImage(named: "ic_play_arrow_2x.png")
+        
+        mpic.nowPlayingInfo = nil
+        activeAudioSession(false)
+    }
+    
+    func playAudioWithCurrentSettings(mpic:MPNowPlayingInfoCenter){
+        audioPlayer.play()
+        aniView?.emitter.particleBirthRate = currentScene.birthRate
+        playGraphic.image = UIImage(named: "ic_pause_2x.png")
+        
+        let mpic = MPNowPlayingInfoCenter.defaultCenter()
+        mpic.nowPlayingInfo = [MPMediaItemPropertyTitle:"Chill"]
+        activeAudioSession(true)
     }
     
     func activeAudioSession(active:Bool){
@@ -127,7 +136,30 @@ class ViewController: UIViewController {
         catch{}
     }
     
-    override func remoteControlReceivedWithEvent(event: UIEvent?) { // *
+    func checkState(){
+        if(AVAudioSession.sharedInstance().otherAudioPlaying){
+            
+        }
+        
+        if(shouldPlayOnReentry == true){
+            playAudioWithCurrentSettings(mpic)
+
+        }
+    }
+    
+    func saveState() {
+        shouldPlayOnReentry = shouldPlay()
+    }
+    
+    func shouldPlay() -> Bool{
+        return audioPlayer?.audioPlaying() == true ? true : false
+    }
+    
+    func setAudioPlayer(file:String, type:String){
+        audioPlayer = AudioPlayer(file: file, type: type, sliderValue: slider.value, shouldPlay: shouldPlay())
+    }
+    
+    override func remoteControlReceivedWithEvent(event: UIEvent?) {
         switch event!.subtype {
             
         case .RemoteControlTogglePlayPause:
@@ -141,28 +173,19 @@ class ViewController: UIViewController {
         }
     }
     
-    func setAudioPlayer(file:String, type:String){
-        let shouldPlay = audioPlayer?.audioPlaying() == true ? true : false
-        audioPlayer = AudioPlayer(file: file, type: type, sliderValue: slider.value, shouldPlay: shouldPlay)
-    }
-    
-    override func canBecomeFirstResponder() -> Bool {
-        return true
-    }
-    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.becomeFirstResponder()
-        
+
         UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     override func shouldAutorotate() -> Bool {
         return false;
+    }
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return true
     }
     
 }

@@ -16,6 +16,7 @@ class AnimationView: UIView {
         skScene.scaleMode = .AspectFill
         skView.allowsTransparency = true
         skScene.backgroundColor = UIColor.clearColor()
+        self.emitter.removeFromParent()
         skScene.addChild(emitter)
         
         skView.presentScene(skScene)
@@ -25,12 +26,10 @@ class AnimationView: UIView {
     }
     
     override init(frame: CGRect) {
-        self.emitter = SKEmitterNode(fileNamed: "Shower")
         super.init(frame: frame)
     }
 
     required init?(coder aDecoder: NSCoder) {
-        self.emitter = SKEmitterNode(fileNamed: "Shower")
         super.init(coder: aDecoder)
     }
     

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C011AAE1C31A382001A23BE /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C011AAD1C31A382001A23BE /* TabController.swift */; };
 		2C18D2A81C2DF99800F654A0 /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C18D2A61C2DF99800F654A0 /* bokeh.png */; };
 		2C18D2AB1C2DFA1400F654A0 /* Shower.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2C18D2A91C2DFA1400F654A0 /* Shower.sks */; };
 		2C18D2AC1C2DFA1400F654A0 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C18D2AA1C2DFA1400F654A0 /* spark.png */; };
@@ -56,7 +55,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2C011AAD1C31A382001A23BE /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		2C18D2A61C2DF99800F654A0 /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bokeh.png; sourceTree = "<group>"; };
 		2C18D2A91C2DFA1400F654A0 /* Shower.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Shower.sks; sourceTree = "<group>"; };
 		2C18D2AA1C2DFA1400F654A0 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
@@ -135,10 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				2C18D2A61C2DF99800F654A0 /* bokeh.png */,
-				2CC15AF91C35D38200955F20 /* snow.sks */,
 				2C18D2AA1C2DFA1400F654A0 /* spark.png */,
-				2C18D2A91C2DFA1400F654A0 /* Shower.sks */,
-				2CA5DA831C35B6330043D0E7 /* Fire.sks */,
 			);
 			name = SpriteScenes;
 			sourceTree = "<group>";
@@ -179,11 +174,12 @@
 		2C3980451BFFBCD700FA5918 /* Chill */ = {
 			isa = PBXGroup;
 			children = (
+				2C39807E1BFFC0BB00FA5918 /* Audio */,
 				2C75E4681C3DF18E0005B027 /* Graphics */,
 				2C011ABA1C31A6A4001A23BE /* SpriteScenes */,
+				2C8266FB1C4B17BA00B3F2CF /* Things */,
 				2C011AB91C31A67D001A23BE /* Views */,
 				2CF7C88B1C1D095500A1ADED /* Models */,
-				2C39807E1BFFC0BB00FA5918 /* Audio */,
 				2C5013621C1CD2F2001D8094 /* Controls */,
 				2C1192FC1C2870C200B92E7F /* ViewControllers */,
 				2C39804A1BFFBCD800FA5918 /* Main.storyboard */,
@@ -192,8 +188,6 @@
 				2C3980521BFFBCD800FA5918 /* Info.plist */,
 				2C39804D1BFFBCD800FA5918 /* Assets.xcassets */,
 				2C3980461BFFBCD800FA5918 /* AppDelegate.swift */,
-				2C011AAD1C31A382001A23BE /* TabController.swift */,
-				2CE8514E1C44516100A6E321 /* AudioPlayer.swift */,
 			);
 			path = Chill;
 			sourceTree = "<group>";
@@ -239,9 +233,20 @@
 			isa = PBXGroup;
 			children = (
 				2C75E47B1C3DF83B0005B027 /* ic_play_arrow_2x.png */,
+				2CC15AF91C35D38200955F20 /* snow.sks */,
+				2C18D2A91C2DFA1400F654A0 /* Shower.sks */,
+				2CA5DA831C35B6330043D0E7 /* Fire.sks */,
 				2C75E4791C3DF8280005B027 /* ic_pause_2x.png */,
 			);
 			name = Graphics;
+			sourceTree = "<group>";
+		};
+		2C8266FB1C4B17BA00B3F2CF /* Things */ = {
+			isa = PBXGroup;
+			children = (
+				2CE8514E1C44516100A6E321 /* AudioPlayer.swift */,
+			);
+			name = Things;
 			sourceTree = "<group>";
 		};
 		2CF7C88B1C1D095500A1ADED /* Models */ = {
@@ -399,7 +404,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C011AAE1C31A382001A23BE /* TabController.swift in Sources */,
 				2C4D6B1B1C34B16800E56A12 /* Colors.swift in Sources */,
 				2CE8514F1C44516100A6E321 /* AudioPlayer.swift in Sources */,
 				2C3980491BFFBCD800FA5918 /* ViewController.swift in Sources */,

@@ -21,7 +21,6 @@ class AudioPlayer: NSObject {
     func initAudioPlayer(){
         let path = NSBundle.mainBundle().pathForResource(file, ofType: type)!
         let url = NSURL(fileURLWithPath: path)
-//        let audioShouldPlay = audioPlaying()
         
         do{
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
