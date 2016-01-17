@@ -9,7 +9,6 @@ class ViewController: UIViewController {
     var aniView:AnimationView!
     var sceneInfo:[String:SceneInfo]!
     var currentScene:SceneInfo!
-    var shouldPlayOnReentry:Bool = false
     let mpic = MPNowPlayingInfoCenter.defaultCenter()
     
     @IBOutlet weak var slider: ArcSlider!
@@ -111,7 +110,6 @@ class ViewController: UIViewController {
     }
     
     func stopAudio(mpic:MPNowPlayingInfoCenter){
-        shouldPlayOnReentry = false
         audioPlayer.stop()
         resetUI()
         
@@ -120,7 +118,6 @@ class ViewController: UIViewController {
     }
     
     func playAudioWithCurrentSettings(mpic:MPNowPlayingInfoCenter){
-        shouldPlayOnReentry = true
         audioPlayer.play()
         aniView?.emitter.particleBirthRate = currentScene.birthRate
         playGraphic.image = UIImage(named: "ic_pause_2x.png")
@@ -138,7 +135,7 @@ class ViewController: UIViewController {
     }
     
     func checkState(){
-        if(AVAudioSession.sharedInstance().otherAudioPlaying || shouldPlayOnReentry == false){
+        if(AVAudioSession.sharedInstance().otherAudioPlaying || audioPlayer?.shouldPlay == false){
             resetUI()
             
             return
@@ -168,10 +165,8 @@ class ViewController: UIViewController {
             if audioPlayer.audioPlaying() { audioPlayer.pause() } else { audioPlayer.play()}
         case .RemoteControlPlay:
             audioPlayer.play()
-            shouldPlayOnReentry = true
         case .RemoteControlPause:
             audioPlayer.pause()
-            shouldPlayOnReentry = false
         default:
             break
         }

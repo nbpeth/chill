@@ -39,14 +39,17 @@ class AudioPlayer: NSObject {
     
     func play(){
         audioPlayer?.play()
+        shouldPlay = true
     }
     
     func pause(){
         audioPlayer?.pause()
+        shouldPlay = false
     }
     
     func stop(){
         audioPlayer?.stop()
+        shouldPlay = false
     }
     
     func audioPlaying()->Bool{
