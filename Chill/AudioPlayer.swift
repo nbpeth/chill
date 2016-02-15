@@ -3,14 +3,12 @@ import AVFoundation
 
 class AudioPlayer: NSObject {
     var audioPlayer:AVAudioPlayer?
-    var file:String
-    var type:String
+    var audioFile:AudioFile
     var sliderValue:Float
     var shouldPlay:Bool
     
-    init(file:String, type:String, sliderValue:Float, shouldPlay:Bool){
-        self.file = file
-        self.type = type
+    init(file:AudioFile, sliderValue:Float, shouldPlay:Bool){
+        self.audioFile = file
         self.sliderValue = sliderValue
         self.shouldPlay = shouldPlay
         
@@ -19,7 +17,7 @@ class AudioPlayer: NSObject {
     }
     
     func initAudioPlayer(){
-        let path = NSBundle.mainBundle().pathForResource(file, ofType: type)!
+        let path = NSBundle.mainBundle().pathForResource(audioFile.fileName, ofType: audioFile.fileType)!
         let url = NSURL(fileURLWithPath: path)
         
         do{

@@ -20,15 +20,15 @@ class ViewController: UIViewController {
         self.view.backgroundColor = Colors.navy
         
         stowSceneInfo()
-        setAudioPlayer("rain_1", type: "mp3")
+        createAudioPlayer(AudioFile(name: "rain_1", type: "mp3"))
         setScene("Shower")
     }
     
     func stowSceneInfo(){
         sceneInfo = [String:SceneInfo]()
-        sceneInfo.updateValue(SceneInfo(sceneName:"Shower", birthRate:1500, emitterPosition:2, audioFile: "rain_1", audioFileType: "mp3"), forKey: "Shower")
-        sceneInfo.updateValue(SceneInfo(sceneName:"Fire",birthRate:220, emitterPosition:2, audioFile: "fire_1", audioFileType: "mp3"), forKey: "Fire")
-        sceneInfo.updateValue(SceneInfo(sceneName:"snow",birthRate:42, emitterPosition:1, audioFile: "ambient", audioFileType: "wav"), forKey: "snow")
+        sceneInfo.updateValue(SceneInfo(sceneName:"Shower", birthRate:1500, emitterPosition:2, audioFile: AudioFile(name: "rain_1", type: "mp3")), forKey: "Shower")
+        sceneInfo.updateValue(SceneInfo(sceneName:"Fire",birthRate:220, emitterPosition:2, audioFile: AudioFile(name: "fire_1", type: "mp3")), forKey: "Fire")
+        sceneInfo.updateValue(SceneInfo(sceneName:"snow",birthRate:42, emitterPosition:1, audioFile: AudioFile(name: "ambient", type: "wav")), forKey: "snow")
     }
     
     func setScene(sceneName:String){
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         aniView.emitter.particleBirthRate = audioPlayer.audioPlaying() ? currentScene.birthRate : 0
         self.view.insertSubview(aniView, belowSubview: slider)
 
-        setAudioPlayer(currentScene.audioFile, type: currentScene.audioFileType)
+        createAudioPlayer(currentScene.audioFile)
     }
 
     
@@ -154,8 +154,8 @@ class ViewController: UIViewController {
         return audioPlayer?.audioPlaying() == true ? true : false
     }
     
-    func setAudioPlayer(file:String, type:String){
-        audioPlayer = AudioPlayer(file: file, type: type, sliderValue: slider.value, shouldPlay: shouldPlay())
+    func createAudioPlayer(audioFile:AudioFile){
+        audioPlayer = AudioPlayer(file: audioFile, sliderValue: slider.value, shouldPlay: shouldPlay())
     }
     
     override func remoteControlReceivedWithEvent(event: UIEvent?) {
