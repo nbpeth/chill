@@ -5,11 +5,11 @@ import UIKit
     
     @IBInspectable var color:UIColor?
     
-    override func drawRect(rect: CGRect) {
-        var recty = CGRectMake(0,0,rect.height/2,rect.width/2)
+    override func draw(_ rect: CGRect) {
+        let recty = CGRect(x: 0,y: 0, width: rect.height/2, height: rect.width/2)
         let center = CGPoint(x:rect.width/2, y: rect.height/2)
-        recty.offsetInPlace(dx: center.x/2, dy: center.y/2)
-        let path = UIBezierPath(ovalInRect: rect)
+        recty.offsetBy(dx: center.x/2, dy: center.y/2)
+        let path = UIBezierPath(ovalIn: rect)
         
         color?.setFill()
         

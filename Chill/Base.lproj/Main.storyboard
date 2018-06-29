@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="B3B-oB-JiF">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="B3B-oB-JiF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,94 +19,101 @@
                         <viewControllerLayoutGuide type="bottom" id="i2T-36-eGi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sHT-6Q-4LE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y2A-GP-HMA" customClass="ArcSlider" customModule="Chill" customModuleProvider="target">
-                                <rect key="frame" x="10" y="134" width="300" height="300"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2A-GP-HMA" customClass="ArcSlider" customModule="Chill" customModuleProvider="target">
+                                <rect key="frame" x="10" y="154" width="355" height="359"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nVA-4f-enL" customClass="ActionButton" customModule="Chill" customModuleProvider="target">
-                                        <rect key="frame" x="100" y="100" width="100" height="100"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVA-4f-enL" customClass="ActionButton" customModule="Chill" customModuleProvider="target">
+                                        <rect key="frame" x="100" y="106" width="155" height="155"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ic_play_arrow_2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="AFt-FJ-3vU">
-                                                <rect key="frame" x="30" y="30" width="40" height="40"/>
-                                                <color key="tintColor" red="0.77474088649226092" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_play_arrow_2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="AFt-FJ-3vU">
+                                                <rect key="frame" x="57" y="57" width="40" height="40"/>
+                                                <color key="tintColor" red="0.77474088649226092" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="gTU-49-T3u"/>
+                                                    <constraint firstAttribute="height" constant="40" id="snH-TX-RPx"/>
+                                                </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
                                         <constraints>
-                                            <constraint firstItem="AFt-FJ-3vU" firstAttribute="centerX" secondItem="nVA-4f-enL" secondAttribute="centerX" id="7w1-4p-3cy"/>
-                                            <constraint firstItem="AFt-FJ-3vU" firstAttribute="centerY" secondItem="nVA-4f-enL" secondAttribute="centerY" id="V6b-0A-6K3"/>
-                                            <constraint firstItem="AFt-FJ-3vU" firstAttribute="centerX" secondItem="nVA-4f-enL" secondAttribute="centerX" id="ZJg-Tf-vjy"/>
-                                            <constraint firstItem="AFt-FJ-3vU" firstAttribute="centerY" secondItem="nVA-4f-enL" secondAttribute="centerY" id="b7f-NL-CCX"/>
+                                            <constraint firstItem="AFt-FJ-3vU" firstAttribute="centerY" secondItem="nVA-4f-enL" secondAttribute="centerY" id="17K-hA-gxO"/>
+                                            <constraint firstItem="AFt-FJ-3vU" firstAttribute="centerX" secondItem="nVA-4f-enL" secondAttribute="centerX" id="8dj-xE-JGr"/>
+                                            <constraint firstItem="AFt-FJ-3vU" firstAttribute="top" secondItem="nVA-4f-enL" secondAttribute="top" constant="57" id="Sbr-gJ-bcO"/>
+                                            <constraint firstItem="AFt-FJ-3vU" firstAttribute="leading" secondItem="nVA-4f-enL" secondAttribute="leading" constant="57" id="zrU-fT-8qu"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                <color key="value" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="value" red="0.034757062792778015" green="0.31522077322006226" blue="0.81491315364837646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="playButtonWasPressed:" destination="B3B-oB-JiF" eventType="touchUpInside" id="qJe-r9-UnG"/>
+                                            <action selector="playButtonWasPressed:" destination="B3B-oB-JiF" eventType="touchUpInside" id="pGV-aB-ACa"/>
                                         </connections>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="nVA-4f-enL" firstAttribute="centerX" secondItem="y2A-GP-HMA" secondAttribute="centerX" id="EUV-nT-2xV"/>
-                                    <constraint firstItem="nVA-4f-enL" firstAttribute="centerY" secondItem="y2A-GP-HMA" secondAttribute="centerY" id="Y3O-jW-Fha"/>
+                                    <constraint firstItem="nVA-4f-enL" firstAttribute="centerX" secondItem="y2A-GP-HMA" secondAttribute="centerX" id="E3b-B6-OEy"/>
+                                    <constraint firstAttribute="bottom" secondItem="nVA-4f-enL" secondAttribute="bottom" constant="98" id="ZEO-cD-B2U"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="sliderColor">
-                                        <color key="value" red="0.22532152220000001" green="0.46536494499999997" blue="0.98706495760000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.22532152220000001" green="0.46536494499999997" blue="0.98706495760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="baseColor">
-                                        <color key="value" red="0.38169706060000003" green="0.67211731919999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.38169706060000003" green="0.67211731919999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                         <real key="value" value="40"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="sliderValueHasChanged:" destination="B3B-oB-JiF" eventType="valueChanged" id="Gud-2Z-D7v"/>
+                                    <action selector="sliderValueHasChanged:" destination="B3B-oB-JiF" eventType="touchUpInside" id="TDH-Jq-dnt"/>
                                 </connections>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DtW-3U-JMm">
-                                <rect key="frame" x="54" y="28" width="212" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DtW-3U-JMm">
+                                <rect key="frame" x="81" y="55" width="212" height="29"/>
                                 <segments>
                                     <segment title="Rain"/>
                                     <segment title="Fireplace"/>
                                     <segment title="White"/>
                                 </segments>
-                                <color key="tintColor" red="0.0" green="0.75474880582337045" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.75474880582337045" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <action selector="segmentControlHasChanged:" destination="B3B-oB-JiF" eventType="valueChanged" id="VQO-YY-g92"/>
+                                    <action selector="segmentControlChanged:" destination="B3B-oB-JiF" eventType="valueChanged" id="cpo-my-Cil"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DtW-3U-JMm" firstAttribute="centerX" secondItem="sHT-6Q-4LE" secondAttribute="centerX" id="7LB-BC-P2b"/>
-                            <constraint firstItem="y2A-GP-HMA" firstAttribute="centerY" secondItem="sHT-6Q-4LE" secondAttribute="centerY" id="a0U-Jf-q1N"/>
-                            <constraint firstItem="y2A-GP-HMA" firstAttribute="centerX" secondItem="sHT-6Q-4LE" secondAttribute="centerX" id="xdi-Mw-62G"/>
+                            <constraint firstItem="y2A-GP-HMA" firstAttribute="centerX" secondItem="sHT-6Q-4LE" secondAttribute="centerX" id="0rh-1T-DlY"/>
+                            <constraint firstItem="y2A-GP-HMA" firstAttribute="top" secondItem="DtW-3U-JMm" secondAttribute="bottom" constant="71" id="BIr-ty-4sf"/>
+                            <constraint firstItem="y2A-GP-HMA" firstAttribute="centerX" secondItem="DtW-3U-JMm" secondAttribute="centerX" id="lLO-99-g6q"/>
+                            <constraint firstItem="i2T-36-eGi" firstAttribute="top" secondItem="y2A-GP-HMA" secondAttribute="bottom" constant="154" id="nXZ-JD-X2e"/>
+                            <constraint firstItem="y2A-GP-HMA" firstAttribute="leading" secondItem="sHT-6Q-4LE" secondAttribute="leadingMargin" constant="-6" id="rSh-jC-cxe"/>
+                            <constraint firstItem="y2A-GP-HMA" firstAttribute="centerY" secondItem="sHT-6Q-4LE" secondAttribute="centerY" id="vhe-zL-vhu"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="playButton" destination="nVA-4f-enL" id="U80-fT-uro"/>
                         <outlet property="playGraphic" destination="AFt-FJ-3vU" id="2bb-Pb-fEw"/>
-                        <outlet property="segmentControl" destination="DtW-3U-JMm" id="ZjO-Aj-o7w"/>
-                        <outlet property="slider" destination="y2A-GP-HMA" id="E2A-0n-XWC"/>
+                        <outlet property="segmentControl" destination="DtW-3U-JMm" id="1uz-XF-eKi"/>
+                        <outlet property="slider" destination="y2A-GP-HMA" id="I0G-c7-4wh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4XZ-cV-w2u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-56" y="1781"/>
+            <point key="canvasLocation" x="-56.5" y="1780.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="ic_play_arrow_2x.png" width="48" height="48"/>
     </resources>
-    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

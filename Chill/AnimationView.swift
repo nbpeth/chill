@@ -6,16 +6,16 @@ class AnimationView: UIView {
 
     var emitter:SKEmitterNode!
     
-    override func drawRect(rect: CGRect) {
-        loadSprite(rect)
+    override func draw(_ rect: CGRect) {
+        loadSprite(rect: rect)
     }
     
     func loadSprite(rect:CGRect){
         let skView:SKView = SKView(frame: rect)
         let skScene:SKScene = SKScene(size: skView.frame.size)
-        skScene.scaleMode = .AspectFill
+        skScene.scaleMode = .aspectFill
         skView.allowsTransparency = true
-        skScene.backgroundColor = UIColor.clearColor()
+        skScene.backgroundColor = UIColor.clear
         self.emitter.removeFromParent()
         skScene.addChild(emitter)
         

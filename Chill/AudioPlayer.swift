@@ -17,13 +17,13 @@ class AudioPlayer: NSObject {
     }
     
     func initAudioPlayer(){
-        let path = NSBundle.mainBundle().pathForResource(audioFile.fileName, ofType: audioFile.fileType)!
-        let url = NSURL(fileURLWithPath: path)
+        guard let path = Bundle.main.path(forResource: audioFile.name, ofType: audioFile.type) else { return }
+        let url = URL(fileURLWithPath: path)
         
         do{
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             
-            audioPlayer = try AVAudioPlayer(contentsOfURL: url)
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer?.volume = sliderValue
             audioPlayer?.numberOfLoops = -1
             audioPlayer?.prepareToPlay()
@@ -51,7 +51,7 @@ class AudioPlayer: NSObject {
     }
     
     func audioPlaying()->Bool{
-        return audioPlayer?.playing == true ? true : false
+        return audioPlayer?.isPlaying == true ? true : false
     }
     
     func setVolume(volume:Float){
